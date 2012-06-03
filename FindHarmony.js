@@ -41,36 +41,42 @@ function run(){
             ++erkannt;
             var text  = new Text(curScore);
             text.text = tone(grundton%12);
+            text.yOffset = -5;
             cursor.putStaffText(text);
           }
           if ((diff1==5)&&(diff2==9)){ //Dur-Akkord 1. Umkehrung
             ++erkannt;
             var text  = new Text(curScore);
             text.text = tone((grundton+5)%12)+"¹";
+            text.yOffset = -5;
             cursor.putStaffText(text);
           }
           if ((diff1==3)&&(diff2==8)){ //Dur-Akkord 2. Umkehrung
             ++erkannt;
             var text  = new Text(curScore);
             text.text = tone((grundton+8)%12)+"²";
+            text.yOffset = -5;
             cursor.putStaffText(text);
           }
           if ((diff1==3)&&(diff2==7)){ //Moll-Akkord
             ++erkannt;
             var text  = new Text(curScore);
             text.text = tone(grundton%12)+"m";
+            text.yOffset = -5;
             cursor.putStaffText(text);
           }
           if ((diff1==5)&&(diff2==8)){ //Moll-Akkord 1. Umkehrung
             ++erkannt;
             var text  = new Text(curScore);
             text.text = tone((grundton+5)%12)+"m¹";
+            text.yOffset = -5;
             cursor.putStaffText(text);
           }
           if ((diff1==4)&&(diff2==9)){ //Moll-Akkord 2. Umkehrung
             ++erkannt;
             var text  = new Text(curScore);
             text.text = tone((grundton+9)%12)+"m²";
+            text.yOffset = -5;
             cursor.putStaffText(text);
           }
         }
@@ -83,24 +89,28 @@ function run(){
             ++erkannt;
             var text  = new Text(curScore);
             text.text = tone(grundton%12)+"7";
+            text.yOffset = -5;
             cursor.putStaffText(text);
           }
           if ((diff1==2)&&(diff2==6)&&(diff3==9)){ //Septime-Akkord 1. Umkehrung
             ++erkannt;
             var text  = new Text(curScore);
             text.text = tone((grundton+2)%12)+"7¹";
+            text.yOffset = -5;
             cursor.putStaffText(text);
           }
           if ((diff1==3)&&(diff2==5)&&(diff3==9)){ //Septime-Akkord 2. Umkehrung
             ++erkannt;
             var text  = new Text(curScore);
             text.text = tone((grundton+5)%12)+"7²";
+            text.yOffset = -5;
             cursor.putStaffText(text);
           }
           if ((diff1==3)&&(diff2==6)&&(diff3==8)){ //Septime-Akkord 3. Umkehrung
             ++erkannt;
             var text  = new Text(curScore);
             text.text = tone((grundton+8)%12)+"7³";
+            text.yOffset = -5;
             cursor.putStaffText(text);
           }
         }

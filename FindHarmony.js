@@ -168,9 +168,9 @@ function tone(semitone) {
 //---------------------------------------------------------
 
 var mscorePlugin = {
-         menu: 'Plugins.Find harmonies',
-         init: init,
-         run:  run
-         };
+   menu: 'Plugins.Find harmonies',
+   init: init,
+   run:  run
+};
 
 mscorePlugin;

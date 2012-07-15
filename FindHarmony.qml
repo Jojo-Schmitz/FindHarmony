@@ -5,11 +5,29 @@ import MuseScore 1.0
 MuseScore {
    menuPath: 'Plugins.Find harmonies'
    onRun: {
+      function tone(semitone) {
+         switch (semitone) {
+            case 0: return "C";
+            case 1: return "Db";
+            case 2: return "D";
+            case 3: return "Eb";
+            case 4: return "E";
+            case 5: return "F";
+            case 6: return "Gb";
+            case 7: return "G";
+            case 8: return "Ab";
+            case 9: return "A";
+            case 10: return "Bb";
+            case 11: return "B";
+            default: return "?";
+         }
+      }
+
       if (typeof curScore === 'undefined')
          Qt.quit();
 	
       var recognized = 0;
-      var cursor = curScore.newScore();
+      var cursor = curScore.newCursor();
       for (var staff = 0; staff < curScore.nstaves; ++staff) {
          cursor.staffIdx = staff;
          cursor.voice = 0;
@@ -120,24 +138,5 @@ MuseScore {
          mb.text = recognized + " harmonies found";
       mb.exec();
       Qt.quit();
-   }
-}
-
-
-function tone(semitone) {
-   switch (semitone) {
-      case 0: return "C";
-      case 1: return "Db";
-      case 2: return "D";
-      case 3: return "Eb";
-      case 4: return "E";
-      case 5: return "F";
-      case 6: return "Gb";
-      case 7: return "G";
-      case 8: return "Ab";
-      case 9: return "A";
-      case 10: return "Bb";
-      case 11: return "B";
-      default: return "?";
    }
 }

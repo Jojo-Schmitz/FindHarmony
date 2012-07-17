@@ -3,6 +3,8 @@ import MuseScore 1.0
 
 
 MuseScore {
+   version: "1.0"
+   description: "This plugin scans every chord and writes the harmony name next to it if one of the 3 types (Major, minor, Septime) is identified. A number indicates the inversion."
    menuPath: 'Plugins.Find harmonies'
    onRun: {
       function tone(semitone) {

@@ -134,7 +134,7 @@ function run()
    } //Next staff
    mb = new QMessageBox();
    mb.setWindowTitle("MuseScore: Harmony Names");
-   if (recognized = 1)
+   if (recognized == 1)
       mb.text = recognized + " harmony found";
    else
       mb.text = recognized + " harmonies found";

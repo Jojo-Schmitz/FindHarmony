@@ -46,7 +46,7 @@ MuseScore {
                      ++recognized;
                      var text  = newElement(Element.STAFF_TEXT);
                      text.text = tone(base % 12);
-                     //text.yOffset = -5;
+                     text.pos.y = 1;
                      cursor.add(text);
                   }
                   else if ((diff1 == 5) && (diff2 == 9)) {
@@ -54,7 +54,7 @@ MuseScore {
                      ++recognized;
                      var text  = newElement(Element.STAFF_TEXT);
                      text.text = tone((base + 5) % 12) + "1"; // 1 superscript
-                     //text.yOffset = -5;
+                     text.pos.y = 1;
                      cursor.add(text);
                   }
                   else if ((diff1 == 3) && (diff2 == 8)) {
@@ -62,7 +62,7 @@ MuseScore {
                      ++recognized;
                      var text  = newElement(Element.STAFF_TEXT);
                      text.text = tone((base + 8) % 12) + "2"; // 2 superscript
-                     //text.yOffset = -5;
+                     text.pos.y = 1;
                      cursor.add(text);
                   }
                   else if ((diff1 == 3) && (diff2 == 7)) {
@@ -70,7 +70,7 @@ MuseScore {
                      ++recognized;
                      var text  = newElement(Element.STAFF_TEXT);
                      text.text = tone(base % 12) + "m";
-                     //text.yOffset = -5;
+                     text.pos.y = 1;
                      cursor.add(text);
                   }
                   else if ((diff1 == 5) && (diff2 == 8)) {
@@ -78,7 +78,7 @@ MuseScore {
                      ++recognized;
                      var text  = newElement(Element.STAFF_TEXT);
                      text.text = tone((base + 5) % 12) + "m1"; // 1 superscript
-                     //text.yOffset = -5;
+                     text.pos.y = 1;
                      cursor.add(text);
                   }
                   else if ((diff1 == 4) && (diff2 == 9)) {
@@ -86,7 +86,7 @@ MuseScore {
                      ++recognized;
                      var text  = newElement(Element.STAFF_TEXT);
                      text.text = tone((base + 9) % 12) + "m2"; // 2 superscript
-                     //text.yOffset = -5;
+                     text.pos.y = 1;
                      cursor.add(text);
                   }
                }
@@ -100,7 +100,7 @@ MuseScore {
                      ++recognized;
                      var text  = newElement(Element.STAFF_TEXT);
                      text.text = tone(base % 12) + "7";
-                     //text.yOffset = -5;
+                     text.pos.y = 1;
                      cursor.add(text);
                   }
                   else if ((diff1 == 2) && (diff2 == 6) && (diff3 == 9)) {
@@ -108,7 +108,7 @@ MuseScore {
                      ++recognized;
                      var text  = newElement(Element.STAFF_TEXT);
                      text.text = tone((base + 2) % 12) + "71"; // 1 superscript
-                     //text.yOffset = -5;
+                     text.pos.y = 1;
                      cursor.add(text);
                   }
                   else if ((diff1 == 3) && (diff2 == 5) && (diff3 == 9)) {
@@ -116,7 +116,7 @@ MuseScore {
                      ++recognized;
                      var text  = newElement(Element.STAFF_TEXT);
                      text.text = tone((base + 5) % 12) + "72"; // 2 superscript
-                     //text.yOffset = -5;
+                     text.pos.y = 1;
                      cursor.add(text);
                   }
                   else if ((diff1 == 3) && (diff2 == 6) && (diff3 == 8)) {
@@ -124,7 +124,7 @@ MuseScore {
                      ++recognized;
                      var text  = newElement(Element.STAFF_TEXT);
                      text.text = tone((base + 8) % 12) + "73"; // 3 superscript
-                     //text.yOffset = -5;
+                     text.pos.y = 1;
                      cursor.add(text);
                   }
                }
@@ -132,13 +132,18 @@ MuseScore {
             cursor.next();
          }
       } //Next staff
-      mb = new QMessageBox();
-      mb.setWindowTitle("MuseScore: Harmony Names");
-      if (recognized = 1)
-         mb.text = recognized + " harmony found";
-      else
-         mb.text = recognized + " harmonies found";
-      mb.exec();
+
+      //mb = new QMessageBox();
+      //mb.setWindowTitle("MuseScore: Harmony Names");
+      if (recognized == 1) {
+         //mb.text = recognized + " harmony found";
+         console.log(recognized + " harmony found");
+      }
+      else {
+         //mb.text = recognized + " harmonies found";
+         console.log(recognized + " harmonies found");
+      }
+      //mb.exec();
       Qt.quit();
    }
 }

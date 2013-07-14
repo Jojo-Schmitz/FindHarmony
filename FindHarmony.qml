@@ -1,4 +1,4 @@
-import QtQuick 1.0
+import QtQuick 2.0
 import MuseScore 1.0
 
 
@@ -6,6 +6,10 @@ MuseScore {
    version: "1.0"
    description: "This plugin scans every chord and writes the harmony name next to it if one of the 3 types (Major, minor, Septime) is identified. A number indicates the inversion."
    menuPath: 'Plugins.Find harmonies'
+   Cursor {
+      id: cursor
+      score: curScore
+   }
    onRun: {
       function tone(semitone) {
          switch (semitone) {
@@ -29,7 +33,6 @@ MuseScore {
          Qt.quit();
 	
       var recognized = 0;
-      var cursor = curScore.newCursor();
       for (var staff = 0; staff < curScore.nstaves; ++staff) {
          cursor.staffIdx = staff;
          cursor.voice = 0;
